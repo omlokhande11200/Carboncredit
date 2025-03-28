@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Credit Prediction</title>
+    <!-- Use Flask's url_for to reference static CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Carbon Credit Prediction</h1>
+        <form id="inputForm">
+            <!-- Fuel Type Dropdown -->
+            <label for="fuel_type">Fuel Type:</label>
+            <select id="fuel_type" name="fuel_type" required>
+                <option value="Coke">Coke</option>
+                <option value="Coal">Coal</option>
+                <option value="Natural Gas">Natural Gas</option>
+                <option value="Scrap Metal">Scrap Metal</option>
+            </select>
+
+            <!-- Energy Consumption (kWh) -->
+            <label for="energy_consumption">Energy Consumption (kWh):</label>
+            <input type="number" id="energy_consumption" name="energy_consumption" required>
+
+            <!-- Raw Materials Used (tons) -->
+            <label for="raw_materials_used">Raw Materials Used (tons):</label>
+            <input type="number" id="raw_materials_used" name="raw_materials_used" required>
+
+            <!-- CO2 Emissions (tons) -->
+            <label for="co2_emissions">CO2 Emissions (tons):</label>
+            <input type="number" id="co2_emissions" name="co2_emissions" required>
+
+            <!-- CH4 Emissions (tons) -->
+            <label for="ch4_emissions">CH4 Emissions (tons):</label>
+            <input type="number" id="ch4_emissions" name="ch4_emissions" required>
+
+            <!-- N2O Emissions (tons) -->
+            <label for="n2o_emissions">N2O Emissions (tons):</label>
+            <input type="number" id="n2o_emissions" name="n2o_emissions" required>
+
+            <!-- Particulate Matter (kg) -->
+            <label for="particulate_matter">Particulate Matter (kg):</label>
+            <input type="number" id="particulate_matter" name="particulate_matter" required>
+
+            <!-- Flow Rate (m³/s) -->
+            <label for="flow_rate">Flow Rate (m³/s):</label>
+            <input type="number" id="flow_rate" name="flow_rate" required>
+
+            <!-- Temperature (°C) -->
+            <label for="temperature">Temperature (°C):</label>
+            <input type="number" id="temperature" name="temperature" required>
+
+            <!-- Pressure (Pa) -->
+            <label for="pressure">Pressure (Pa):</label>
+            <input type="number" id="pressure" name="pressure" required>
+
+            <!-- Gas Sensor Readings (ppm) -->
+            <label for="gas_sensor_readings">Gas Sensor Readings (ppm):</label>
+            <input type="number" id="gas_sensor_readings" name="gas_sensor_readings" required>
+
+            <!-- Emission Factor Dropdown -->
+            <label for="emission_factor">Emission Factor (tons per ton of fuel):</label>
+            <select id="emission_factor" name="emission_factor" required>
+                <option value="2.0">2.0</option>
+                <option value="2.2">2.2</option>
+                <option value="2.4">2.4</option>
+                <option value="2.6">2.6</option>
+            </select>
+
+            <!-- Carbon Intensity (kg CO2/ton of steel) -->
+            <label for="carbon_intensity">Carbon Intensity (kg CO2/ton of steel):</label>
+            <input type="number" id="carbon_intensity" name="carbon_intensity" required>
+
+            <!-- CO2 Capture (tons) -->
+            <label for="co2_capture">CO2 Capture (tons):</label>
+            <input type="number" id="co2_capture" name="co2_capture" required>
+
+            <button type="submit">Predict Carbon Credits</button>
+        </form>
+
+        <h3>Prediction Result:</h3>
+        <div id="result"></div>
+    </div>
+
+    <!-- Use Flask's url_for to reference static JS file -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
