@@ -2,3 +2,4 @@
 xgboost
 flask_cors
 Werkzeug
+gunicorn
